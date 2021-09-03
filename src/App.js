@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { API, graphqlOperation } from 'aws-amplify';
+import { withAuthenticator } from '@aws-amplify/ui-react'
 import './App.css';
 import { listTodos } from './graphql/queries';
 import { createTodo } from './graphql/mutations';
@@ -79,4 +80,4 @@ function App() {
   );
 };
 
-export default App;
+export default withAuthenticator(App);
